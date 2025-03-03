@@ -3,21 +3,49 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ramadhan Kareem</title>
+  <title>Ramadhan Kareem! 🌙</title>
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-<div class="container">
+
+  <h2>Ramadan Mubarak! 🌙</h2>
+  <p>Enter your name to receive a special greeting:</p>
+  
+  <input type="text" id="nameInput" placeholder="Enter your name">
+  <button onclick="showDetails()">Welcome</button>
+<!-- ! Container that will hold the hidden detaila -->
+  <div class="container" id="greetingContainer">
     <div class="greeting-card">
       <h1>Ramadhan Kareem! </h1>
+      <p id="personalMessage"></p>
       <p>May this Ramadhan bring peace, blessings, and joy to you and your family.
-          May all your Duas be accepted by Allah (swt).
+         May all your Duas be accepted by Allah (swt).
       </p>
+      <!-- ! for this one replace with actaul image addrresses -->
       <div class="images">
         <img src="خلفيات فانوس رمضان.jpeg" alt="Ramadhan Lamp">
         <img src="Ramadan Gold Lamp Background, Ramadan, Gold, Lamp Background Image And Wallpaper for Free Download.jpeg" alt="Ramadhan Moon">
       </div>
     </div>
-</div>
+  </div>
+
+  <script>
+    <!-- ! Function that will reveal the details hidden. Twill request users name as the input-->
+    
+    function showDetails() {
+      
+      let name = document.getElementById("nameInput").value.trim();
+
+      if (name === "") {
+        alert("Please enter your name!");
+        return;
+      }
+
+      document.getElementById("personalMessage").innerHTML = "Ramadan Mubarak, " + name + "! 🌙 May this Ramadan bring peace, happiness, and blessings to you.";
+      document.getElementById("greetingContainer").style.display = "block";
+    }
+  </script>
+
 </body>
 </html>
